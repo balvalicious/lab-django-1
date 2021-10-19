@@ -1,0 +1,33 @@
+<!-- layout.html -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    		<title>Website</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body>
+	    <header class="jumbotron text-center">
+            <h1></h1>
+            <p></p>
+            <nav>
+                <a href="{% url 'website:poema_1' %}" class="btn btn-info">Poema 1</a>
+                <a href="{% url 'website:poema_2' %}" class="btn btn-info">Poema 2</a>
+                <a href="{% url 'website:poema_3' %}" class="btn btn-info">Poema 3</a>
+            </nav>
+        </header>
+        <article class='center'>
+            <main class="col-sm-6"> 
+                {% block main %}
+                {% endblock main %}
+            </main>
+            <aside class="col-sm-6">
+                {% load static %}
+                <img src="{% static 'website/images/image.jpg' %}" width="200" height="200" class="center">
+            </aside>
+        </article>
+        <footer>Texto simples de rodapé</footer>
+	</body>
+</html>
